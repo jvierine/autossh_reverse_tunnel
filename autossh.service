@@ -29,7 +29,7 @@ Environment="AUTOSSH_GATETIME=0"
 ExecStart=/usr/bin/autossh -M 0 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o "ExitOnForwardFailure=yes" -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=false -N USER@SERVER -R 2244:localhost:22
 
 # kill process
-ExecStop=killall -s KILL autossh
+ExecStop=/usr/bin/killall -s KILL autossh
 
 [Install]
 WantedBy=multi-user.target
